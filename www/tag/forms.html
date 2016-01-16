@@ -214,11 +214,27 @@
                     <div class="input-label">
                         Tank Type
                     </div>
-                    <select>
+                    <select onchange={this.update}>
                         <option selected name="tankSix">Six Wheel</option>
                         <option name="tankEight">Eight Wheel</option>
-                        <option name="tankWest">West Coast</option>
-                        <option name="tankStandard">Standard</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select" if={tankSix.selected && tank.selected}>
+                    <div class="input-label">
+                        Type of Six Wheel
+                    </div>
+                    <select>
+                        <option name="sixtankWest">West Coast</option>
+                        <option name="sixtankStandard">Standard</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select" if={tankEight.selected && tank.selected}>
+                    <div class="input-label">
+                        Type of Eight Wheel
+                    </div>
+                    <select>
+                        <option name="eighttankWest">West Coast</option>
+                        <option name="eighttankStandard">Standard</option>
                     </select>
                 </label>
             </div>
@@ -244,10 +260,11 @@
             </li>
             <h3>Driver Quality</h3>
             <div class="item range range-positive">
-                Bad
+                Trash
                 <input type="range" name="driver" min="0" max="100" value="33">
-                Good
+                GODMODE
             </div>
+            <h3>Fouls</h3>
             <input type="number" name="fouls" placeholder="Fouls">
         </ul>
         <button class="button button-block button-positive">
@@ -324,10 +341,14 @@
                     mecanum: this.mecanum.selected,
                     omni: this.omni.selected,
                     tank: {
-                        tankSix: this.tankSix.selected,
-                        tankEight: this.tankEight.selected,
-                        tankWest: this.tankWest.selected,
-                        tankStandard: this.tankStandard.selected,
+                        tankSix: {
+                            west: sixtankWest.selected,
+                            standard: sixtankStandard.selected,
+                        },
+                        tankEight: {
+                            west: eighttankWest.selected,
+                            standard: eighttankStandard.selected,
+                        },
                     },
                 },
                 towerScaled: this.towerScaled.selected,
