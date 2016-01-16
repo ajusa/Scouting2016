@@ -1,5 +1,99 @@
 <forms>
-<h1 class="royal">Auton</h1>
+    <h1 class="royal">Auton</h1>
+    <h2>Movement</h2>
+    <li class="item item-toggle">
+        Move
+        <label class="toggle toggle-positive">
+            <input type="checkbox" name="autoMove">
+            <div class="track">
+                <div class="handle"></div>
+            </div>
+        </label>
+    </li>
+    <li class="item item-checkbox">
+        <label class="checkbox">
+            <input type="checkbox" name="autonreach" onchange={this.update}>
+        </label>
+        Reach
+    </li>
+    <li class="item item-checkbox">
+        <label class="checkbox">
+            <input type="checkbox" name="autoncross" onchange={this.update}>
+        </label>
+        Cross
+    </li>
+    <label class="item item-input item-select" if={autoncross.checked || autonreach.checked}>
+        <div class="input-label">
+            Defense
+        </div>
+        <select>
+            <option name="autonPortcullis">Portcullis</option>
+            <option name="autonChevaldeFrise">Cheval de Frise</option>
+            <option name="autonMoat">Moat</option>
+            <option name="autonRamparts">Ramparts</option>
+            <option name="autonDrawbridge">Drawbridge</option>
+            <option name="autonSallyPort">Sally Port</option>
+            <option name="autonRockWall">Rock Wall</option>
+            <option name="autonRoughTerrain">Rough Terrain</option>
+            <option name="autonLowBar">Low Bar</option>
+        </select>
+    </label>
+    <h2>Boulder</h2>
+    <h3>Collection</h3>
+    <li class="item item-checkbox">
+        <label class="checkbox">
+            <input type="checkbox" name="autonstart">
+        </label>
+        Start with
+    </li>
+    <li class="item item-checkbox">
+        <label class="checkbox">
+            <input type="checkbox" name="autoncollect">
+        </label>
+        Collects
+    </li>
+    <h3>Scoring</h3>
+    <div>
+        <li class="item item-toggle">
+            High Goal
+            <label class="toggle toggle-positive">
+                <input type="checkbox" name="autonhighgoal">
+                <div class="track">
+                    <div class="handle"></div>
+                </div>
+            </label>
+        </li>
+    </div>
+    <div>
+        <li class="item item-toggle">
+            Low Goal
+            <label class="toggle toggle-positive">
+                <input type="checkbox" name="autonlowgoal">
+                <div class="track">
+                    <div class="handle"></div>
+                </div>
+            </label>
+        </li>
+    </div>
+    <h2>Other</h2>
+    <li class="item item-toggle">
+        Foul
+        <label class="toggle toggle-positive">
+            <input type="checkbox" name="autonFoul">
+            <div class="track">
+                <div class="handle"></div>
+            </div>
+        </label>
+    </li>
+    <li class="item item-toggle">
+        Interfere
+        <label class="toggle toggle-positive">
+            <input type="checkbox" name="autonInterfere">
+            <div class="track">
+                <div class="handle"></div>
+            </div>
+        </label>
+    </li>
     <h1 class="energized">Tele-Op</h1>
     <h2>Obstacles Crossed</h2>
     <h3>Type</h3>
@@ -8,7 +102,7 @@
             <div>
                 <li class="item item-toggle">
                     Portcullis
-                    <label class="toggle toggle-assertive">
+                    <label class="toggle toggle-positive">
                         <input type="checkbox" onchange={this.update} name="Portculliscrossed">
                         <div class="track">
                             <div class="handle"></div>
@@ -22,7 +116,7 @@
             <div>
                 <li class="item item-toggle">
                     Cheval de Frise
-                    <label class="toggle toggle-assertive">
+                    <label class="toggle toggle-positive">
                         <input type="checkbox" onchange={this.update} name="ChevaldeFrisecrossed">
                         <div class="track">
                             <div class="handle"></div>
@@ -36,7 +130,7 @@
             <div>
                 <li class="item item-toggle">
                     Moat
-                    <label class="toggle toggle-assertive">
+                    <label class="toggle toggle-positive">
                         <input type="checkbox" onchange={this.update} name="Moatcrossed">
                         <div class="track">
                             <div class="handle"></div>
@@ -50,7 +144,7 @@
             <div>
                 <li class="item item-toggle">
                     Ramparts
-                    <label class="toggle toggle-assertive">
+                    <label class="toggle toggle-positive">
                         <input type="checkbox" onchange={this.update} name="Rampartscrossed">
                         <div class="track">
                             <div class="handle"></div>
@@ -64,7 +158,7 @@
             <div>
                 <li class="item item-toggle">
                     Drawbridge
-                    <label class="toggle toggle-assertive">
+                    <label class="toggle toggle-positive">
                         <input type="checkbox" onchange={this.update} name="Drawbridgecrossed">
                         <div class="track">
                             <div class="handle"></div>
@@ -78,7 +172,7 @@
             <div>
                 <li class="item item-toggle">
                     Sally Port
-                    <label class="toggle toggle-assertive">
+                    <label class="toggle toggle-positive">
                         <input type="checkbox" onchange={this.update} name="SallyPortcrossed">
                         <div class="track">
                             <div class="handle"></div>
@@ -92,7 +186,7 @@
             <div>
                 <li class="item item-toggle">
                     Rock Wall
-                    <label class="toggle toggle-assertive">
+                    <label class="toggle toggle-positive">
                         <input type="checkbox" onchange={this.update} name="RockWallcrossed">
                         <div class="track">
                             <div class="handle"></div>
@@ -105,7 +199,7 @@
             </div>
             <li class="item item-toggle">
                 Rough Terrain
-                <label class="toggle toggle-assertive">
+                <label class="toggle toggle-positive">
                     <input type="checkbox" onchange={this.update} name="RoughTerraincrossed">
                     <div class="track">
                         <div class="handle"></div>
@@ -118,7 +212,7 @@
             </div>
             <li class="item item-toggle">
                 Low Bar
-                <label class="toggle toggle-assertive">
+                <label class="toggle toggle-positive">
                     <input type="checkbox" onchange={this.update} name="LowBarcrossed">
                     <div class="track">
                         <div class="handle"></div>
@@ -160,7 +254,7 @@
             <div>
                 <li class="item item-toggle">
                     High Goal
-                    <label class="toggle toggle-assertive">
+                    <label class="toggle toggle-positive">
                         <input type="checkbox" onchange={this.update} name="highgoal">
                         <div class="track">
                             <div class="handle"></div>
@@ -174,7 +268,7 @@
             <div>
                 <li class="item item-toggle">
                     Low Goal
-                    <label class="toggle toggle-assertive">
+                    <label class="toggle toggle-positive">
                         <input type="checkbox" onchange={this.update} name="lowgoal">
                         <div class="track">
                             <div class="handle"></div>
@@ -242,7 +336,7 @@
             <h2>Other</h2>
             <li class="item item-toggle">
                 Scale Tower
-                <label class="toggle toggle-assertive">
+                <label class="toggle toggle-positive">
                     <input type="checkbox" name="towerScaled">
                     <div class="track">
                         <div class="handle"></div>
@@ -252,7 +346,7 @@
             <br>
             <li class="item item-toggle">
                 Lift Gate
-                <label class="toggle toggle-assertive">
+                <label class="toggle toggle-positive">
                     <input type="checkbox" name="gateLifted">
                     <div class="track">
                         <div class="handle"></div>
@@ -262,8 +356,7 @@
             <h3>Driver Quality</h3>
             <div class="item range range-positive">
                 Trash
-                <input type="range" name="driver" min="0" max="100" value="33">
-                GODMODE
+                <input type="range" name="driver" min="0" max="100" value="33"> GODMODE
             </div>
             <h3>Fouls</h3>
             <input type="number" name="fouls" placeholder="Fouls">
@@ -275,89 +368,118 @@
     <script>
     submit(e) {
         this.data = {
-            obstaclesCrossed: {
-                Portcullis: {
-                    crossed: this.Portculliscrossed.checked,
-                    times: this.Portcullisnoitems.value,
-                },
-                ChevaldeFrise: {
-                    crossed: this.ChevaldeFrisecrossed.checked,
-                    times: this.ChevaldeFrisenoitems.value,
-                },
-                Moat: {
-                    crossed: this.Moatcrossed.checked,
-                    times: this.Moatnoitems.value,
-                },
-                Ramparts: {
-                    crossed: this.Rampartscrossed.checked,
-                    times: this.Rampartsnoitems.value,
-                },
-                Drawbridge: {
-                    crossed: this.Drawbridgecrossed.checked,
-                    times: this.Drawbridgenoitems.value,
-                },
-                SallyPort: {
-                    crossed: this.SallyPortcrossed.checked,
-                    times: this.SallyPortnoitems.value,
-                },
-                RockWall: {
-                    crossed: this.RockWallcrossed.checked,
-                    times: this.RockWallnoitems.value,
-                },
-                RoughTerrain: {
-                    crossed: this.RoughTerraincrossed.checked,
-                    times: this.RoughTerrainnoitems.value,
-                },
-                LowBar: {
-                    crossed: this.LowBarcrossed.checked,
-                    times: this.LowBarnoitems.value,
-                },
-            },
-            boulder: {
-                movement: {
-                    pickup: this.boulderpickup.checked,
-                    push: this.boulderpush.checked,
-                },
-                where: {
-                    ground: this.boulderground.checked,
-                    feeder: this.boulderfeeder.checked,
-                },
-                scoring: {
-                    highgoal: {
-                        possible: this.highgoal.checked,
-                        times: this.highgoaltimes.value,
-                    },
-                    lowgoal: {
-                        possible: this.lowgoal.checked,
-                        times: this.lowgoaltimes.value,
-                    }
-                }
-            },
-            robot: {
-                playStyle: {
-                    offense: this.robotoffense.value,
-                    defense: this.robotdefense.value,
-                },
-                driveType: {
-                    mecanum: this.mecanum.selected,
-                    omni: this.omni.selected,
-                    tank: {
-                        tankSix: {
-                            west: sixtankWest.selected,
-                            standard: sixtankStandard.selected,
-                        },
-                        tankEight: {
-                            west: eighttankWest.selected,
-                            standard: eighttankStandard.selected,
-                        },
+            auton: {
+                move: autoMove.checked,
+                foul: autonFoul.checked,
+                interfere: autonInterfere.checked,
+                defense: {
+                    reach: autonreach.checked,
+                    cross: autoncross.checked,
+                    type: {
+                        portcullis: autonPortcullis.checked,
+                        chevaldefrise: autonChevaldeFrise.checked,
+                        moat: autonMoat.checked,
+                        ramparts: autonRamparts.checked,
+                        drawbridge: autonDrawbridge.checked,
+                        sallyport: autonSallyPort.checked,
+                        rockwall: autonRockWall.checked,
+                        roughterrain: autonRoughTerrain.checked,
+                        lowbar: autonLowBar.checked,
                     },
                 },
-                towerScaled: this.towerScaled.selected,
-                gateLifted: this.gateLifted.selected,
-                driverQuality: this.driver.value,
-                fouls: this.fouls,
+                boulder:{
+                    starts: autonstart.checked,
+                    collects: autoncollect.checked,
+                    highgoal: autonhighgoal.checked,
+                    lowgoal: autonlowgoal.checked,
+                },
 
             },
+            teleop: {
+                obstaclesCrossed: {
+                    Portcullis: {
+                        crossed: this.Portculliscrossed.checked,
+                        times: this.Portcullisnoitems.value,
+                    },
+                    ChevaldeFrise: {
+                        crossed: this.ChevaldeFrisecrossed.checked,
+                        times: this.ChevaldeFrisenoitems.value,
+                    },
+                    Moat: {
+                        crossed: this.Moatcrossed.checked,
+                        times: this.Moatnoitems.value,
+                    },
+                    Ramparts: {
+                        crossed: this.Rampartscrossed.checked,
+                        times: this.Rampartsnoitems.value,
+                    },
+                    Drawbridge: {
+                        crossed: this.Drawbridgecrossed.checked,
+                        times: this.Drawbridgenoitems.value,
+                    },
+                    SallyPort: {
+                        crossed: this.SallyPortcrossed.checked,
+                        times: this.SallyPortnoitems.value,
+                    },
+                    RockWall: {
+                        crossed: this.RockWallcrossed.checked,
+                        times: this.RockWallnoitems.value,
+                    },
+                    RoughTerrain: {
+                        crossed: this.RoughTerraincrossed.checked,
+                        times: this.RoughTerrainnoitems.value,
+                    },
+                    LowBar: {
+                        crossed: this.LowBarcrossed.checked,
+                        times: this.LowBarnoitems.value,
+                    },
+                },
+                boulder: {
+                    movement: {
+                        pickup: this.boulderpickup.checked,
+                        push: this.boulderpush.checked,
+                    },
+                    where: {
+                        ground: this.boulderground.checked,
+                        feeder: this.boulderfeeder.checked,
+                    },
+                    scoring: {
+                        highgoal: {
+                            possible: this.highgoal.checked,
+                            times: this.highgoaltimes.value,
+                        },
+                        lowgoal: {
+                            possible: this.lowgoal.checked,
+                            times: this.lowgoaltimes.value,
+                        }
+                    }
+                },
+                robot: {
+                    playStyle: {
+                        offense: this.robotoffense.value,
+                        defense: this.robotdefense.value,
+                    },
+                    driveType: {
+                        mecanum: this.mecanum.selected,
+                        omni: this.omni.selected,
+                        tank: {
+                            tankSix: {
+                                west: sixtankWest.selected,
+                                standard: sixtankStandard.selected,
+                            },
+                            tankEight: {
+                                west: eighttankWest.selected,
+                                standard: eighttankStandard.selected,
+                            },
+                        },
+                    },
+                    towerScaled: this.towerScaled.selected,
+                    gateLifted: this.gateLifted.selected,
+                    driverQuality: this.driver.value,
+                    fouls: this.fouls,
+
+                },
+            }
         };
         console.log(this.data.robot.driverQuality);
     }
