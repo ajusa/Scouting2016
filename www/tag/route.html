@@ -1,0 +1,19 @@
+<r>
+    <div if={ URL==opts.url }>
+        <yield></yield>
+    </div>
+    <script>
+    self = this;
+    this.on('mount', function() {
+        riot.route.exec(function(url) {
+            self.URL = url;
+            self.update()
+        })
+    })
+
+    riot.route(function(url) {
+        self.URL = url;
+        self.update()
+    })
+    </script>
+</r>

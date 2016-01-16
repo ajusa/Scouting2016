@@ -1,0 +1,343 @@
+<forms>
+    <h1>Tele-Op</h1>
+    <h2>Obstacles Crossed</h2>
+    <h3>Type</h3>
+    <form onsubmit={submit}>
+        <ul class="list">
+            <div>
+                <li class="item item-toggle">
+                    Portcullis
+                    <label class="toggle toggle-assertive">
+                        <input type="checkbox" onchange={this.update} name="Portculliscrossed">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </li>
+                <div if={Portculliscrossed.checked}>
+                    <input type="number" name="Portcullisnoitems" placeholder="Number of Times">
+                </div>
+            </div>
+            <div>
+                <li class="item item-toggle">
+                    Cheval de Frise
+                    <label class="toggle toggle-assertive">
+                        <input type="checkbox" onchange={this.update} name="ChevaldeFrisecrossed">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </li>
+                <div if={ChevaldeFrisecrossed.checked}>
+                    <input type="number" name="ChevaldeFrisenoitems" placeholder="Number of Times">
+                </div>
+            </div>
+            <div>
+                <li class="item item-toggle">
+                    Moat
+                    <label class="toggle toggle-assertive">
+                        <input type="checkbox" onchange={this.update} name="Moatcrossed">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </li>
+                <div if={Moatcrossed.checked}>
+                    <input type="number" name="Moatnoitems" placeholder="Number of Times">
+                </div>
+            </div>
+            <div>
+                <li class="item item-toggle">
+                    Ramparts
+                    <label class="toggle toggle-assertive">
+                        <input type="checkbox" onchange={this.update} name="Rampartscrossed">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </li>
+                <div if={Rampartscrossed.checked}>
+                    <input type="number" name="Rampartsnoitems" placeholder="Number of Times">
+                </div>
+            </div>
+            <div>
+                <li class="item item-toggle">
+                    Drawbridge
+                    <label class="toggle toggle-assertive">
+                        <input type="checkbox" onchange={this.update} name="Drawbridgecrossed">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </li>
+                <div if={Drawbridgecrossed.checked}>
+                    <input type="number" name="Drawbridgenoitems" placeholder="Number of Times">
+                </div>
+            </div>
+            <div>
+                <li class="item item-toggle">
+                    Sally Port
+                    <label class="toggle toggle-assertive">
+                        <input type="checkbox" onchange={this.update} name="SallyPortcrossed">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </li>
+                <div if={SallyPortcrossed.checked}>
+                    <input type="number" name="SallyPortnoitems" placeholder="Number of Times">
+                </div>
+            </div>
+            <div>
+                <li class="item item-toggle">
+                    Rock Wall
+                    <label class="toggle toggle-assertive">
+                        <input type="checkbox" onchange={this.update} name="RockWallcrossed">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </li>
+                <div if={RockWallcrossed.checked}>
+                    <input type="number" name="RockWallnoitems" placeholder="Number of Times">
+                </div>
+            </div>
+            <li class="item item-toggle">
+                Rough Terrain
+                <label class="toggle toggle-assertive">
+                    <input type="checkbox" onchange={this.update} name="RoughTerraincrossed">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            <div if={RoughTerraincrossed.checked}>
+                <input type="number" name="RoughTerrainnoitems" placeholder="Number of Times">
+            </div>
+            </div>
+            <li class="item item-toggle">
+                Low Bar
+                <label class="toggle toggle-assertive">
+                    <input type="checkbox" onchange={this.update} name="LowBarcrossed">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            <div if={LowBarcrossed.checked}>
+                <input type="number" name="LowBarnoitems" placeholder="Number of Times">
+            </div>
+            </div>
+            <h2>Boulder</h2>
+            <h3>Movement</h3>
+            <li class="item item-checkbox">
+                <label class="checkbox">
+                    <input type="checkbox" name="boulderpickup">
+                </label>
+                Boulder Pickup
+            </li>
+            <li class="item item-checkbox">
+                <label class="checkbox">
+                    <input type="checkbox" name="boulderpush">
+                </label>
+                Boulder Push
+            </li>
+            <h3>Where</h3>
+            <li class="item item-checkbox">
+                <label class="checkbox">
+                    <input type="checkbox" name="boulderground">
+                </label>
+                Ground
+            </li>
+            <li class="item item-checkbox">
+                <label class="checkbox">
+                    <input type="checkbox" name="boulderfeeder">
+                </label>
+                Feeder Station
+            </li>
+            <h3>Scoring</h3>
+            <div>
+                <li class="item item-toggle">
+                    High Goal
+                    <label class="toggle toggle-assertive">
+                        <input type="checkbox" onchange={this.update} name="highgoal">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </li>
+                <div if={highgoal.checked}>
+                    <input type="number" name="highgoaltimes" placeholder="Times Made">
+                </div>
+            </div>
+            <div>
+                <li class="item item-toggle">
+                    Low Goal
+                    <label class="toggle toggle-assertive">
+                        <input type="checkbox" onchange={this.update} name="lowgoal">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </li>
+                <div if={lowgoal.checked}>
+                    <input type="number" name="lowgoaltimes" placeholder="Times Made">
+                </div>
+            </div>
+            <h2>Robot</h2>
+            <h3>Play Style</h3>
+            <li class="item item-checkbox">
+                <label class="checkbox">
+                    <input type="checkbox" name="robotoffense">
+                </label>
+                Offense
+            </li>
+            <li class="item item-checkbox">
+                <label class="checkbox">
+                    <input type="checkbox" name="robotdefense">
+                </label>
+                Defense
+            </li>
+            <h3>Drive</h3>
+            <div class="list">
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Type
+                    </div>
+                    <select onchange={this.update}>
+                        <option selected name="mecanum">Mecanum</option>
+                        <option name="omni">Omni</option>
+                        <option name="tank">Tank</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select" if={tank.selected}>
+                    <div class="input-label">
+                        Tank Type
+                    </div>
+                    <select>
+                        <option selected name="tankSix">Six Wheel</option>
+                        <option name="tankEight">Eight Wheel</option>
+                        <option name="tankWest">West Coast</option>
+                        <option name="tankStandard">Standard</option>
+                    </select>
+                </label>
+            </div>
+            <h2>Other</h2>
+            <li class="item item-toggle">
+                Scale Tower
+                <label class="toggle toggle-assertive">
+                    <input type="checkbox" name="towerScaled">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            <br>
+            <li class="item item-toggle">
+                Lift Gate
+                <label class="toggle toggle-assertive">
+                    <input type="checkbox" name="gateLifted">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            <h3>Driver Quality</h3>
+            <div class="item range range-positive">
+                Bad
+                <input type="range" name="driver" min="0" max="100" value="33">
+                Good
+            </div>
+            <input type="number" name="fouls" placeholder="Fouls">
+        </ul>
+        <button class="button button-block button-positive">
+            SUBMIT
+        </button>
+    </form>
+    <script>
+    submit(e) {
+        this.data = {
+            obstaclesCrossed: {
+                Portcullis: {
+                    crossed: this.Portculliscrossed.checked,
+                    times: this.Portcullisnoitems.value,
+                },
+                ChevaldeFrise: {
+                    crossed: this.ChevaldeFrisecrossed.checked,
+                    times: this.ChevaldeFrisenoitems.value,
+                },
+                Moat: {
+                    crossed: this.Moatcrossed.checked,
+                    times: this.Moatnoitems.value,
+                },
+                Ramparts: {
+                    crossed: this.Rampartscrossed.checked,
+                    times: this.Rampartsnoitems.value,
+                },
+                Drawbridge: {
+                    crossed: this.Drawbridgecrossed.checked,
+                    times: this.Drawbridgenoitems.value,
+                },
+                SallyPort: {
+                    crossed: this.SallyPortcrossed.checked,
+                    times: this.SallyPortnoitems.value,
+                },
+                RockWall: {
+                    crossed: this.RockWallcrossed.checked,
+                    times: this.RockWallnoitems.value,
+                },
+                RoughTerrain: {
+                    crossed: this.RoughTerraincrossed.checked,
+                    times: this.RoughTerrainnoitems.value,
+                },
+                LowBar: {
+                    crossed: this.LowBarcrossed.checked,
+                    times: this.LowBarnoitems.value,
+                },
+            },
+            boulder: {
+                movement: {
+                    pickup: this.boulderpickup.checked,
+                    push: this.boulderpush.checked,
+                },
+                where: {
+                    ground: this.boulderground.checked,
+                    feeder: this.boulderfeeder.checked,
+                },
+                scoring: {
+                    highgoal: {
+                        possible: this.highgoal.checked,
+                        times: this.highgoaltimes.value,
+                    },
+                    lowgoal: {
+                        possible: this.lowgoal.checked,
+                        times: this.lowgoaltimes.value,
+                    }
+                }
+            },
+            robot: {
+                playStyle: {
+                    offense: this.robotoffense.value,
+                    defense: this.robotdefense.value,
+                },
+                driveType: {
+                    mecanum: this.mecanum.selected,
+                    omni: this.omni.selected,
+                    tank: {
+                        tankSix: this.tankSix.selected,
+                        tankEight: this.tankEight.selected,
+                        tankWest: this.tankWest.selected,
+                        tankStandard: this.tankStandard.selected,
+                    },
+                },
+                towerScaled: this.towerScaled.selected,
+                gateLifted: this.gateLifted.selected,
+                driverQuality: this.driver.value,
+                fouls: this.fouls,
+
+            },
+        };
+        console.log(this.data.robot.driverQuality);
+    }
+    </script>
+</forms>
