@@ -1,4 +1,24 @@
 <settings>
-        <h1>Test</h1>
-    </div>
+    <h1>Settings</h1>
+    <li class="item item-toggle">
+        Enable Debugging
+        <label class="toggle toggle-positive">
+            <input type="checkbox" name="debugging" onchange={this.change}>
+            <div class="track">
+                <div class="handle"></div>
+            </div>
+        </label>
+    </li>
+    <script>
+    this.values = {
+        debugging: this.debugging.checked,
+    }
+    change(e) {
+        this.values = {
+            debugging: this.debugging.checked,
+        }
+        global = this.values;
+    }
+    
+    </script>
 </settings>

@@ -364,34 +364,37 @@
         <button class="button button-block button-positive">
             SUBMIT
         </button>
+        <div if={global.debugging}>
+            <pre>{debug}</pre>
+        </div>
     </form>
     <script>
     submit(e) {
         this.data = {
             auton: {
-                move: autoMove.checked,
-                foul: autonFoul.checked,
-                interfere: autonInterfere.checked,
+                move: this.autoMove.checked,
+                foul: this.autonFoul.checked,
+                interfere: this.autonInterfere.checked,
                 defense: {
-                    reach: autonreach.checked,
-                    cross: autoncross.checked,
+                    reach: this.autonreach.checked,
+                    cross: this.autoncross.checked,
                     type: {
-                        portcullis: autonPortcullis.checked,
-                        chevaldefrise: autonChevaldeFrise.checked,
-                        moat: autonMoat.checked,
-                        ramparts: autonRamparts.checked,
-                        drawbridge: autonDrawbridge.checked,
-                        sallyport: autonSallyPort.checked,
-                        rockwall: autonRockWall.checked,
-                        roughterrain: autonRoughTerrain.checked,
-                        lowbar: autonLowBar.checked,
+                        portcullis: this.autonPortcullis.checked,
+                        chevaldefrise: this.autonChevaldeFrise.checked,
+                        moat: this.autonMoat.checked,
+                        ramparts: this.autonRamparts.checked,
+                        drawbridge: this.autonDrawbridge.checked,
+                        sallyport: this.autonSallyPort.checked,
+                        rockwall: this.autonRockWall.checked,
+                        roughterrain: this.autonRoughTerrain.checked,
+                        lowbar: this.autonLowBar.checked,
                     },
                 },
                 boulder:{
-                    starts: autonstart.checked,
-                    collects: autoncollect.checked,
-                    highgoal: autonhighgoal.checked,
-                    lowgoal: autonlowgoal.checked,
+                    starts: this.autonstart.checked,
+                    collects: this.autoncollect.checked,
+                    highgoal: this.autonhighgoal.checked,
+                    lowgoal: this.autonlowgoal.checked,
                 },
 
             },
@@ -464,12 +467,12 @@
                         omni: this.omni.selected,
                         tank: {
                             tankSix: {
-                                west: sixtankWest.selected,
-                                standard: sixtankStandard.selected,
+                                west: this.sixtankWest.selected,
+                                standard: this.sixtankStandard.selected,
                             },
                             tankEight: {
-                                west: eighttankWest.selected,
-                                standard: eighttankStandard.selected,
+                                west: this.eighttankWest.selected,
+                                standard: this.eighttankStandard.selected,
                             },
                         },
                     },
@@ -481,7 +484,8 @@
                 },
             }
         };
-        console.log(this.data.robot.driverQuality);
+        this.debug = JSON.stringify(this.data, null, "\t");
+        console.log(this.debug);
     }
     </script>
 </forms>
