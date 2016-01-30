@@ -9,15 +9,10 @@
     </author>
   <content src="index.html"/>
   <access origin="*"/>
-<<<<<<< HEAD
   <preference name="Fullscreen" value="true" />
   <preference name="webviewbounce" value="true"/>
   <preference name="UIWebViewBounce" value="true"/>
-=======
   <plugin name="org.crosswalk.engine" spec="1.3.0" source="pgb" />
-  <preference name="webviewbounce" value="false"/>
-  <preference name="UIWebViewBounce" value="false"/>
->>>>>>> origin/master
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="android-minSdkVersion" value="16"/>
   <preference name="BackupWebStorage" value="none"/>
