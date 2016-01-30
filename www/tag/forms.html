@@ -364,16 +364,16 @@
         <button class="button button-block button-positive">
             SUBMIT
         </button>
-        <div if={this.debugSetting}>
+        <div if={global.debugging}>
             <pre>{debug}</pre>
         </div>
     </form>
     <script>
-    self = this;
-    this.debugSetting = false;
-    RiotControl.on('debug', function(value) {
-        self.debugSetting = value;
-    })
+    //self = this;
+    //this.debugSetting = false;
+    //RiotControl.on('debug', function(value) {
+    //    self.debugSetting = value;
+    //})
     submit(e) {
         this.data = {
             auton: {
@@ -484,7 +484,7 @@
                     towerScaled: this.towerScaled.selected,
                     gateLifted: this.gateLifted.selected,
                     driverQuality: this.driver.value,
-                    fouls: this.fouls,
+                    fouls: this.fouls.value,
 
                 },
             }
