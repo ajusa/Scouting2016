@@ -7,26 +7,27 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <title></title>
-    
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <!-- ionic/angularjs js -->
-    <script src="js/riot+compiler.min.js"></script>
-    <script src="js/riotcontrol.js"></script>
-    <script src="js/ikki.min.js"></script>
+    <script src="lib/riot+compiler.min.js"></script>
+    <script src="lib/riotcontrol.js"></script>
+    <script src="lib/ikki.min.js"></script>
+    <script src="lib/lockr.min.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
     <!-- your app's js -->
+    <script src="js/settingManager.js"></script>
+    <!-- ui tags -->
     <script src="tag/forms.html" type="riot/tag"></script>
-    <script src="tag/roboform.html" type="riot/tag"></script>
-    <script src="tag/route.html" type="riot/tag"></script>
     <script src="tag/tabs.html" type="riot/tag"></script>
     <script src="tag/settings.html" type="riot/tag"></script>
     <script src="tag/app.html" type="riot/tag"></script>
-
     <!-- mount the tag -->
     <script>
-    riot.mount('*')
+    var manager = new Manager() // Create a store instance.
+    RiotControl.addStore(manager)
+    riot.mount('*');
     </script>
 </head>
 
