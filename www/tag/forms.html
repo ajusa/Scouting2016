@@ -369,6 +369,11 @@
         </div>
     </form>
     <script>
+    //self = this;
+    //this.debugSetting = false;
+    //RiotControl.on('debug', function(value) {
+    //    self.debugSetting = value;
+    //})
     submit(e) {
         this.data = {
             auton: {
@@ -390,7 +395,7 @@
                         lowbar: this.autonLowBar.checked,
                     },
                 },
-                boulder:{
+                boulder: {
                     starts: this.autonstart.checked,
                     collects: this.autoncollect.checked,
                     highgoal: this.autonhighgoal.checked,
@@ -479,13 +484,13 @@
                     towerScaled: this.towerScaled.selected,
                     gateLifted: this.gateLifted.selected,
                     driverQuality: this.driver.value,
-                    fouls: this.fouls,
+                    fouls: this.fouls.value,
 
                 },
             }
         };
         this.debug = JSON.stringify(this.data, null, "\t");
-        console.log(this.debug);
+        //console.log(this.debug);
     }
     </script>
 </forms>
