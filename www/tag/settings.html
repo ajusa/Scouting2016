@@ -14,17 +14,33 @@
             <input type="text" name="ip" placeholder="IP Address" onchange={this.change}>
         </label>
     </div>
+    <div class="list">
+        <label class="item item-input">
+            <input type="text" name="name" placeholder="Name" onchange={this.change}>
+        </label>
+    </div>
+    <h3>Current IP: {values.ip.value}</h3>
+    <h3>Current Name: {values.name.value}</h3>
     <script>
-    this.values = {
-        debugging: this.debugging.checked,
-        ip: this.ip.value,
-    }
+    this.values;
+    self = this;
+    this.on('mount', function() {
+        RiotControl.trigger('get_setting');
+    })
+    RiotControl.on('set', function(set) {
+        self.values = set;
+        self.update();
+    })
+
     change(e) {
         this.values = {
             debugging: this.debugging.checked,
             ip: this.ip.value,
+            name: this.name.value,
         }
+        self.update();
         global = this.values;
+        RiotControl.trigger('set_setting', self.values);
     }
     </script>
 </settings>

@@ -373,7 +373,7 @@
         </div>
     </form>
     <script>
-    //self = this;
+    self = this;
     //this.debugSetting = false;
     //RiotControl.on('debug', function(value) {
     //    self.debugSetting = value;
@@ -384,6 +384,88 @@
         Lockr.flush();
         this.forms = [];
     }
+    this.data = {
+        //ip: global.ip,
+
+        autonmove: this.autoMove.checked,
+        autonfoul: this.autonFoul.checked,
+        autoninterfere: this.autonInterfere.checked,
+
+        autondefensereach: this.autonreach.checked,
+        autondefensecross: this.autoncross.checked,
+
+        autondefensetypeportcullis: this.autonPortcullis.checked,
+        autondefensetypechevaldefrise: this.autonChevaldeFrise.checked,
+        autondefensetypemoat: this.autonMoat.checked,
+        autondefensetyperamparts: this.autonRamparts.checked,
+        autondefensetypedrawbridge: this.autonDrawbridge.checked,
+        autondefensetypesallyport: this.autonSallyPort.checked,
+        autondefensetyperockwall: this.autonRockWall.checked,
+        autondefensetyperoughterrain: this.autonRoughTerrain.checked,
+        autondefensetypelowbar: this.autonLowBar.checked,
+
+        autonboulderstarts: this.autonstart.checked,
+        autonbouldercollects: this.autoncollect.checked,
+        autonboulderhighgoal: this.autonhighgoal.checked,
+        autonboulderlowgoal: this.autonlowgoal.checked,
+
+        teleopobstaclesCrossedPortculliscrossed: this.Portculliscrossed.checked,
+        teleopobstaclesCrossedPortcullistimes: this.Portcullisnoitems.value,
+
+
+        teleopobstaclesChevaldeFrisecrossed: this.ChevaldeFrisecrossed.checked,
+        teleopobstaclesChevaldeFrisetimes: this.ChevaldeFrisenoitems.value,
+
+        teleopobstaclesMoatcrossed: this.Moatcrossed.checked,
+        teleopobstaclesMoattimes: this.Moatnoitems.value,
+
+        teleopobstaclesRampartscrossed: this.Rampartscrossed.checked,
+        teleopobstaclesRampartstimes: this.Rampartsnoitems.value,
+
+        teleopobstaclesDrawbridgecrossed: this.Drawbridgecrossed.checked,
+        teleopobstaclesDrawbridgetimes: this.Drawbridgenoitems.value,
+
+        teleopobstaclesSallyPortcrossed: this.SallyPortcrossed.checked,
+        teleopobstaclesSallyPorttimes: this.SallyPortnoitems.value,
+
+        teleopobstaclesRockWallcrossed: this.RockWallcrossed.checked,
+        teleopobstaclesRockWalltimes: this.RockWallnoitems.value,
+
+        teleopobstaclesRoughTerraincrossed: this.RoughTerraincrossed.checked,
+        teleopobstaclesRoughTerraintimes: this.RoughTerrainnoitems.value,
+
+        teleopobstaclesLowBarcrossed: this.LowBarcrossed.checked,
+        teleopobstaclesLowBartimes: this.LowBarnoitems.value,
+
+        teleopbouldermovementpickup: this.boulderpickup.checked,
+        teleopbouldermovementpush: this.boulderpush.checked,
+
+        teleopboulderwhereground: this.boulderground.checked,
+        teleopboulderwherefeeder: this.boulderfeeder.checked,
+
+        teleopboulderscoringhighgoalpossible: this.highgoal.checked,
+        teleopboulderscoringhighgoaltimes: this.highgoaltimes.value,
+
+        teleopboulderscoringlowgoalpossible: this.lowgoal.checked,
+        teleopboulderscoringlowgoaltimes: this.lowgoaltimes.value,
+
+        teleoprobotplayStyleoffense: this.robotoffense.value,
+        teleoprobotplayStyledefense: this.robotdefense.value,
+
+        teleoprobotdriveTypemecanum: this.mecanum.selected,
+        teleoprobotdriveTypeomni: this.omni.selected,
+
+        teleoprobotdriveTypetanktankSixwest: this.sixtankWest.selected,
+        teleoprobotdriveTypetanktankSixstandard: this.sixtankStandard.selected,
+
+        teleoprobotdriveTypetanktankEightwest: this.eighttankWest.selected,
+        teleoprobotdriveTypetanktankEightstandard: this.eighttankStandard.selected,
+
+        teleoprobottowerScaled: this.towerScaled.selected,
+        teleoprobotgateLifted: this.gateLifted.selected,
+        teleoprobotdriverQuality: this.driver.value,
+        teleoprobotfouls: this.fouls.value,
+    };
     submit(e) {
 
         this.data = {
@@ -406,17 +488,10 @@
             autondefensetyperoughterrain: this.autonRoughTerrain.checked,
             autondefensetypelowbar: this.autonLowBar.checked,
 
-
-
             autonboulderstarts: this.autonstart.checked,
             autonbouldercollects: this.autoncollect.checked,
             autonboulderhighgoal: this.autonhighgoal.checked,
             autonboulderlowgoal: this.autonlowgoal.checked,
-
-
-
-
-
 
             teleopobstaclesCrossedPortculliscrossed: this.Portculliscrossed.checked,
             teleopobstaclesCrossedPortcullistimes: this.Portcullisnoitems.value,
@@ -425,99 +500,78 @@
             teleopobstaclesChevaldeFrisecrossed: this.ChevaldeFrisecrossed.checked,
             teleopobstaclesChevaldeFrisetimes: this.ChevaldeFrisenoitems.value,
 
-
             teleopobstaclesMoatcrossed: this.Moatcrossed.checked,
             teleopobstaclesMoattimes: this.Moatnoitems.value,
-
 
             teleopobstaclesRampartscrossed: this.Rampartscrossed.checked,
             teleopobstaclesRampartstimes: this.Rampartsnoitems.value,
 
-
             teleopobstaclesDrawbridgecrossed: this.Drawbridgecrossed.checked,
             teleopobstaclesDrawbridgetimes: this.Drawbridgenoitems.value,
-
 
             teleopobstaclesSallyPortcrossed: this.SallyPortcrossed.checked,
             teleopobstaclesSallyPorttimes: this.SallyPortnoitems.value,
 
-
             teleopobstaclesRockWallcrossed: this.RockWallcrossed.checked,
             teleopobstaclesRockWalltimes: this.RockWallnoitems.value,
-
 
             teleopobstaclesRoughTerraincrossed: this.RoughTerraincrossed.checked,
             teleopobstaclesRoughTerraintimes: this.RoughTerrainnoitems.value,
 
-
             teleopobstaclesLowBarcrossed: this.LowBarcrossed.checked,
             teleopobstaclesLowBartimes: this.LowBarnoitems.value,
-
-
-
 
             teleopbouldermovementpickup: this.boulderpickup.checked,
             teleopbouldermovementpush: this.boulderpush.checked,
 
-
             teleopboulderwhereground: this.boulderground.checked,
             teleopboulderwherefeeder: this.boulderfeeder.checked,
-
 
             teleopboulderscoringhighgoalpossible: this.highgoal.checked,
             teleopboulderscoringhighgoaltimes: this.highgoaltimes.value,
 
-
             teleopboulderscoringlowgoalpossible: this.lowgoal.checked,
             teleopboulderscoringlowgoaltimes: this.lowgoaltimes.value,
-
-
 
             teleoprobotplayStyleoffense: this.robotoffense.value,
             teleoprobotplayStyledefense: this.robotdefense.value,
 
-
             teleoprobotdriveTypemecanum: this.mecanum.selected,
             teleoprobotdriveTypeomni: this.omni.selected,
-
 
             teleoprobotdriveTypetanktankSixwest: this.sixtankWest.selected,
             teleoprobotdriveTypetanktankSixstandard: this.sixtankStandard.selected,
 
-
             teleoprobotdriveTypetanktankEightwest: this.eighttankWest.selected,
             teleoprobotdriveTypetanktankEightstandard: this.eighttankStandard.selected,
-
-
 
             teleoprobottowerScaled: this.towerScaled.selected,
             teleoprobotgateLifted: this.gateLifted.selected,
             teleoprobotdriverQuality: this.driver.value,
             teleoprobotfouls: this.fouls.value,
-
-
         };
-        this.forms.push(this.data);
+        this.data.name = global.name;
+        //this.forms.push(this.data);
         // console.log(this.forms)
-        
-        console.log(this.forms);
-        for (var i = this.forms.length - 1; i >= 0; i--) {
 
-            qwest.post('http://'+global.ip+':628', this.forms[i])
-                .then(function(xhr, response) {
-                    //console.log("Worked!")
-                    //this.success = true;
-                    
-                    //this.update();
-                })
-                .catch(function(e, xhr, response) {
-                    // Process the error
-                });
-                this.forms.splice(i,1);
-        };
+        //console.log(this.forms);
+        //for (var i = this.forms.length - 1; i >= 0; i--) {
 
-        this.debug = JSON.stringify(this.forms, null, "\t");
-        
+        qwest.post('http://' + global.ip + ':628', self.data)
+            .then(function(xhr, response) {
+                //console.log("Worked!")
+                //this.success = true;
+
+                //this.update();
+            })
+            .catch(function(e, xhr, response) {
+                // Process the error
+            });
+        //this.forms.splice(i,1);
+        //};
+
+        //this.debug = JSON.stringify(this.forms, null, "\t");
+
         //console.log(this.debug);
         Lockr.set('forms', this.forms);
     }
