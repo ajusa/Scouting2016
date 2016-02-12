@@ -3,7 +3,7 @@
     <li class="item item-toggle">
         Enable Debugging
         <label class="toggle toggle-positive">
-            <input type="checkbox" name="debugging" onchange={this.change}>
+            <input type="checkbox" name="debugging">
             <div class="track">
                 <div class="handle"></div>
             </div>
@@ -11,36 +11,33 @@
     </li>
     <div class="list">
         <label class="item item-input">
-            <input type="text" name="ip" placeholder="IP Address" onchange={this.change}>
+            <input type="text" name="ip" placeholder="IP Address">
         </label>
     </div>
     <div class="list">
         <label class="item item-input">
-            <input type="text" name="name" placeholder="Name" onchange={this.change}>
+            <input type="text" name="name" placeholder="Name">
         </label>
     </div>
-    <h3>Current IP: {values.ip.value}</h3>
-    <h3>Current Name: {values.name.value}</h3>
+    <button class="button button-block button-royal" onclick={change}>
+        Change Settings
+    </button>
     <script>
-    this.values;
     self = this;
-    this.on('mount', function() {
-        RiotControl.trigger('get_setting');
-    })
-    RiotControl.on('set', function(set) {
-        self.values = set;
+    RiotControl.on('update_setting', function(set) {
+        self.debugging.checked = set.debugging;
+        self.ip.value = set.ip;
+        self.name.value = set.name;
         self.update();
     })
-
     change(e) {
-        this.values = {
-            debugging: this.debugging.checked,
-            ip: this.ip.value,
-            name: this.name.value,
-        }
+        RiotControl.trigger('set_setting', {
+            debugging: self.debugging.checked,
+            ip: self.ip.value,
+            name: self.name.value,
+        });
+
         self.update();
-        global = this.values;
-        RiotControl.trigger('set_setting', self.values);
     }
     </script>
 </settings>
