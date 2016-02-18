@@ -15,10 +15,12 @@
     <script src="lib/ikki.min.js"></script>
     <script src="lib/lockr.min.js"></script>
     <script src="lib/qwest.min.js"></script>
+    <script src="lib/jsmodal.min.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
     <!-- your app's js -->
-    <script src="js/settingManager.js"></script>
+    <script src="js/settingStore.js"></script>
+    <script src="js/formStore.js"></script>
     <!-- ui tags -->
     <script src="tag/forms.html" type="riot/tag"></script>
     <script src="tag/tabs.html" type="riot/tag"></script>
@@ -26,9 +28,12 @@
     <script src="tag/app.html" type="riot/tag"></script>
     <!-- mount the tag -->
     <script>
-   // var manager = new Manager() // Create a store instance.
-    //RiotControl.addStore(manager)
+    var manager = new Manager(); // Create a store instance.
+    var formStore = new Form();
+    RiotControl.addStore(manager)
+    RiotControl.addStore(formStore)
     riot.mount('*');
+    RiotControl.trigger('get_setting');
     </script>
 </head>
 

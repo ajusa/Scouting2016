@@ -20,6 +20,13 @@
     </div>
     <tabs></tabs>
     <script>
-    var global = {};
+    
+    this.on('mount', function() {
+        RiotControl.trigger('get_setting');
+    })
+    RiotControl.on('set', function(set) {
+            global = set;
+        })
+        //var global = {};
     </script>
 </app>

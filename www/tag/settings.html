@@ -3,7 +3,7 @@
     <li class="item item-toggle">
         Enable Debugging
         <label class="toggle toggle-positive">
-            <input type="checkbox" name="debugging" onchange={this.change}>
+            <input type="checkbox" name="debugging">
             <div class="track">
                 <div class="handle"></div>
             </div>
@@ -11,20 +11,33 @@
     </li>
     <div class="list">
         <label class="item item-input">
-            <input type="text" name="ip" placeholder="IP Address" onchange={this.change}>
+            <input type="text" name="ip" placeholder="IP Address">
         </label>
     </div>
+    <div class="list">
+        <label class="item item-input">
+            <input type="text" name="name" placeholder="Name">
+        </label>
+    </div>
+    <button class="button button-block button-royal" onclick={change}>
+        Change Settings
+    </button>
     <script>
-    this.values = {
-        debugging: this.debugging.checked,
-        ip: this.ip.value,
-    }
+    self = this;
+    RiotControl.on('update_setting', function(set) {
+        self.debugging.checked = set.debugging;
+        self.ip.value = set.ip;
+        self.name.value = set.name;
+        self.update();
+    })
     change(e) {
-        this.values = {
-            debugging: this.debugging.checked,
-            ip: this.ip.value,
-        }
-        global = this.values;
+        RiotControl.trigger('set_setting', {
+            debugging: self.debugging.checked,
+            ip: self.ip.value,
+            name: self.name.value,
+        });
+
+        self.update();
     }
     </script>
 </settings>
