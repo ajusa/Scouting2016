@@ -1,25 +1,24 @@
 <forms>
     <h1>Team</h1>
     <div class="list">
-    <label class="item item-input">
-            <input type="text" name="ip" placeholder="Match Number">
+        <label class="item item-input">
+            <input type="text" name="match" placeholder="Match Number">
         </label>
         <label class="item item-input">
-            <input type="text" name="ip" placeholder="Team Number">
+            <input type="text" name="team" placeholder="Team Number">
         </label>
         <li class="item item-checkbox">
-        <label class="checkbox">
-            <input type="checkbox" name="autonreach">
-        </label>
-        Blue
-    </li>
-    <li class="item item-checkbox">
-        <label class="checkbox">
-            <input type="checkbox" name="autoncross" onchange={this.update}>
-        </label>
-        Red
-    </li>
-
+            <label class="checkbox">
+                <input type="radio" name="alliance">
+            </label>
+            Alliance Blue
+        </li>
+        <li class="item item-checkbox">
+            <label class="checkbox">
+                <input type="radio" name="alliance">
+            </label>
+            Alliance Red
+        </li>
     </div>
     <h1 class="royal">Auton</h1>
     <h2>Movement</h2>
@@ -401,6 +400,9 @@
         self.forms = [];
     }
     self.data = {
+        match: this.match.value,
+        team: this.team.value,
+        alliance: this.alliance.value,
         autonmove: this.autoMove.checked,
         autonfoul: this.autonFoul.checked,
         autoninterfere: this.autonInterfere.checked,
@@ -461,6 +463,9 @@
     submit(e) {
 
         self.data = {
+            match: this.match.value,
+            team: this.team.value,
+            alliance: this.alliance.value,
             autonmove: this.autoMove.checked,
             autonfoul: this.autonFoul.checked,
             autoninterfere: this.autonInterfere.checked,
@@ -518,6 +523,11 @@
             teleoprobotdriverQuality: this.driver.value,
             teleoprobotfouls: this.fouls.value,
         };
+        Modal.open({
+            content: '<strong>Default modal!</strong><br />Testing the modal.<br /><br />Loreum ipsum dolorem the quick brown fox jumped over the lazy dog.<br /><br />Yes its true.',
+            draggable: true,
+
+        });
         RiotControl.trigger('submit', self.data);
         //RiotControl.trigger('get_forms', self.data);
         //RiotControl.on('forms', function(value) {

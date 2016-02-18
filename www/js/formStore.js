@@ -9,10 +9,10 @@ function Form() {
         form.name = settings.name;
         qwest.post('http://' + settings.ip + ':628', form)
             .then(function(xhr, response) {
-                console.log('self')
+                window.alert("It's over 9000!");
             })
             .catch(function(e, xhr, response) {
-                // Process the error
+                window.alert("Sanik failed.");
             });
     });
     self.on('get_forms', function() {
