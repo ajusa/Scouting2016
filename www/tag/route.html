@@ -3,7 +3,7 @@
         <yield></yield>
     </div>
     <script>
-    self = this;
+    var self = this;
     this.on('mount', function() {
         riot.route.exec(function(url) {
             self.URL = url;

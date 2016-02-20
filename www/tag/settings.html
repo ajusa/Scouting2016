@@ -23,7 +23,7 @@
         Change Settings
     </button>
     <script>
-    self = this;
+    var self = this;
     RiotControl.on('update_setting', function(set) {
         self.debugging.checked = set.debugging;
         self.ip.value = set.ip;

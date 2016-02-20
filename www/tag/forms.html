@@ -7,18 +7,15 @@
         <label class="item item-input">
             <input type="text" name="team" placeholder="Team Number">
         </label>
-        <li class="item item-checkbox">
-            <label class="checkbox">
-                <input type="radio" name="alliance">
-            </label>
-            Alliance Blue
-        </li>
-        <li class="item item-checkbox">
-            <label class="checkbox">
-                <input type="radio" name="alliance">
-            </label>
-            Alliance Red
-        </li>
+        <label class="item item-input item-select">
+            <div class="input-label">
+                Color
+            </div>
+            <select>
+                <option selected name="blue">Blue</option>
+                <option name="red">Red</option>
+            </select>
+        </label>
     </div>
     <h1 class="royal">Auton</h1>
     <h2>Movement</h2>
@@ -382,7 +379,9 @@
             <h3>Fouls</h3>
             <input type="number" name="fouls" placeholder="Fouls">
         </ul>
-        <p class="balanced" if={success}>It worked!</p>
+        <label class="item item-input">
+            <textarea placeholder="Comments" name="comments"></textarea>
+        </label>
         <button class="button button-block button-positive" onclick={submit}>
             SUBMIT
         </button>
@@ -394,7 +393,7 @@
         </div>
     </form>
     <script>
-    self = this;
+    var self = this;
     deleteThing(e) {
         Lockr.flush();
         self.forms = [];
@@ -402,7 +401,8 @@
     self.data = {
         match: this.match.value,
         team: this.team.value,
-        alliance: this.alliance.value,
+        blue: this.blue.selected,
+        red: this.red.selected,
         autonmove: this.autoMove.checked,
         autonfoul: this.autonFoul.checked,
         autoninterfere: this.autonInterfere.checked,
@@ -459,13 +459,15 @@
         teleoprobotgateLifted: this.gateLifted.selected,
         teleoprobotdriverQuality: this.driver.value,
         teleoprobotfouls: this.fouls.value,
+        comments: this.comments.value,
     };
     submit(e) {
-
+        console.log(this.alliance)
         self.data = {
             match: this.match.value,
             team: this.team.value,
-            alliance: this.alliance.value,
+            blue: this.blue.selected,
+            red: this.red.selected,
             autonmove: this.autoMove.checked,
             autonfoul: this.autonFoul.checked,
             autoninterfere: this.autonInterfere.checked,
@@ -522,12 +524,8 @@
             teleoprobotgateLifted: this.gateLifted.selected,
             teleoprobotdriverQuality: this.driver.value,
             teleoprobotfouls: this.fouls.value,
+            comments: this.comments.value,
         };
-        Modal.open({
-            content: '<strong>Default modal!</strong><br />Testing the modal.<br /><br />Loreum ipsum dolorem the quick brown fox jumped over the lazy dog.<br /><br />Yes its true.',
-            draggable: true,
-
-        });
         RiotControl.trigger('submit', self.data);
         //RiotControl.trigger('get_forms', self.data);
         //RiotControl.on('forms', function(value) {
