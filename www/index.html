@@ -16,6 +16,7 @@
     <script src="lib/lockr.min.js"></script>
     <script src="lib/qwest.min.js"></script>
     <script src="lib/jsmodal.min.js"></script>
+    <script type='application/javascript' src='lib/fastclick.js'></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
     <!-- your app's js -->
@@ -28,6 +29,11 @@
     <script src="tag/app.html" type="riot/tag"></script>
     <!-- mount the tag -->
     <script>
+    if ('addEventListener' in document) {
+        document.addEventListener('DOMContentLoaded', function() {
+            FastClick.attach(document.body);
+        }, false);
+    }
     var manager = new Manager(); // Create a store instance.
     var formStore = new Form();
     RiotControl.addStore(manager)
