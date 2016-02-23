@@ -4,6 +4,7 @@ function Manager() {
     self.on('set_setting', function(value) {
         Lockr.set('settings', value);
         RiotControl.trigger('update_setting', value);
+        window.alert("Y U YES");
     });
     self.on('get_setting', function() {
         temp = Lockr.get('settings');
