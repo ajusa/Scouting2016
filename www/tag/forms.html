@@ -353,7 +353,16 @@
             </div>
             <h2>Other</h2>
             <li class="item item-toggle">
-                Scale Tower
+                Scale Tower Attempted
+                <label class="toggle toggle-positive">
+                    <input type="checkbox" name="towerScaledAttempt">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            <li class="item item-toggle">
+                Scale Tower Successful
                 <label class="toggle toggle-positive">
                     <input type="checkbox" name="towerScaled">
                     <div class="track">
@@ -455,6 +464,7 @@
         teleoprobotdriveTypetanktankSixstandard: this.sixtankStandard.selected,
         teleoprobotdriveTypetanktankEightwest: this.eighttankWest.selected,
         teleoprobotdriveTypetanktankEightstandard: this.eighttankStandard.selected,
+        teleoprobottowerScaledAttempt: this.towerScaledAttempt.selected,
         teleoprobottowerScaled: this.towerScaled.selected,
         teleoprobotgateLifted: this.gateLifted.selected,
         teleoprobotdriverQuality: this.driver.value,
@@ -520,6 +530,7 @@
             teleoprobotdriveTypetanktankSixstandard: this.sixtankStandard.selected,
             teleoprobotdriveTypetanktankEightwest: this.eighttankWest.selected,
             teleoprobotdriveTypetanktankEightstandard: this.eighttankStandard.selected,
+            teleoprobottowerScaledAttempt: this.towerScaledAttempt.selected,
             teleoprobottowerScaled: this.towerScaled.selected,
             teleoprobotgateLifted: this.gateLifted.selected,
             teleoprobotdriverQuality: this.driver.value,

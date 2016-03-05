@@ -1,0 +1,52 @@
+<lead>
+    <h1>Lead Scout</h1>
+    <h2>Spy</h2>
+    <li class="item item-toggle">
+        Spy got Team #
+        <label class="toggle toggle-positive">
+            <input type="checkbox" name="spyNumber">
+            <div class="track">
+                <div class="handle"></div>
+            </div>
+        </label>
+    </li>
+    <label class="item item-input">
+        <input type="text" name="team" placeholder="Team Number">
+    </label>
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Spy Communication
+        </div>
+        <select onchange={this.update}>
+            <option selected name="hand">Hand Signals</option>
+            <option name="sign">Sign</option>
+            <option name="notes">Taking Notes</option>
+            <option name="other">Other</option>
+        </select>
+    </label>
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Barrier Location
+        </div>
+        <select name="location">
+            <option selected value="hand">1</option>
+            <option value="sign">2</option>
+            <option value="notes">3</option>
+            <option value="other">4</option>
+        </select>
+    </label>
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Type of Barrier
+        </div>
+        <select onchange={this.update}>
+            <option selected name="hand">Hand Signals</option>
+            <option name="sign">Sign</option>
+            <option name="notes">Taking Notes</option>
+            <option name="other">Other</option>
+        </select>
+    </label>
+    <script>
+    var self = this;
+    </script>
+</lead>

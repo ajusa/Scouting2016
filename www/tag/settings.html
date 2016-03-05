@@ -19,6 +19,11 @@
             <input type="text" name="name" placeholder="Name">
         </label>
     </div>
+    <div class="list">
+        <label class="item item-input">
+            <input type="password" name="pass" placeholder="Password">
+        </label>
+    </div>
     <button class="button button-block button-royal" onclick={change}>
         Change Settings
     </button>
@@ -28,6 +33,7 @@
         self.debugging.checked = set.debugging;
         self.ip.value = set.ip;
         self.name.value = set.name;
+        self.pass.value = set.pass;
         self.update();
     })
     change(e) {
@@ -35,6 +41,7 @@
             debugging: self.debugging.checked,
             ip: self.ip.value,
             name: self.name.value,
+            pass: self.pass.value,
         });
 
         self.update();

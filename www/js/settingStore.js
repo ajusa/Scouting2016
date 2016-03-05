@@ -4,7 +4,7 @@ function Manager() {
     self.on('set_setting', function(value) {
         Lockr.set('settings', value);
         RiotControl.trigger('update_setting', value);
-        window.alert("Y U YES");
+        window.alert("Settings Updated");
     });
     self.on('get_setting', function() {
         temp = Lockr.get('settings');
@@ -13,6 +13,7 @@ function Manager() {
                 debugging: false,
                 ip: "1.2.3.4",
                 name: "Scout",
+                pass: "ha nope lol",
             }
             RiotControl.trigger('update_setting', temp);
         } else {
