@@ -1,10 +1,21 @@
 <tabs>
     <div class="tabs tabs-dark">
-        <a class="tab-item active" href="#main">Home</a>
+        <a class="tab-item active" href={url}>Home</a>
         <a class="tab-item" href="#wiki">Wiki</a>
         <a class="tab-item" href="#settings">Settings</a>
     </div>
-	<script>
+    <script>
+    var self = this;
+    self.url = "#main";
+    RiotControl.on('update_setting', function(settings) {
+        console.log(self.url)
 
-	</script>
+        if (settings.pass == "password") {
+            self.url = "#lead"
+        } else {
+            self.url = "#main"
+        }
+        self.update();
+    })
+    </script>
 </tabs>
