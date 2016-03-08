@@ -14,7 +14,7 @@
             <input type="text" name="ip" placeholder="IP Address">
         </label>
     </div>
-    <div class="list">
+    <div class="list" show={tree}>
         <label class="item item-input">
             <input type="text" name="name" placeholder="Name">
         </label>
@@ -29,6 +29,7 @@
     </button>
     <script>
     var self = this;
+    self.tree = false;
     RiotControl.on('update_setting', function(set) {
         self.debugging.checked = set.debugging;
         self.ip.value = set.ip;
@@ -41,9 +42,14 @@
             debugging: self.debugging.checked,
             ip: self.ip.value,
             name: self.name.value,
-            pass: self.pass.value,
+            pass: btoa(self.pass.value),
         });
-
+        console.log(self.pass.value)
+        if (self.pass.value == "Ymx1ZWJhYmllc2FyZXVuaGVhbHRoeQ==") {
+            self.tree = true;
+        } else {
+            self.tree = false;
+        }
         self.update();
     }
     </script>
