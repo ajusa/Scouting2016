@@ -44,12 +44,23 @@
             name: self.name.value,
             pass: btoa(self.pass.value),
         });
-        console.log(self.pass.value)
+
         if (self.pass.value == "Ymx1ZWJhYmllc2FyZXVuaGVhbHRoeQ==") {
             self.tree = true;
         } else {
             self.tree = false;
+            qwest.post('http://' + self.ip.value + ':628/pass', {
+                    pass: atob(self.pass.value),
+                    name: self.name.value,
+                })
+                .then(function(xhr, response) {
+                    console.log("pass sent")
+                })
+                .catch(function(e, xhr, response) {
+                    console.log("pass unsent")
+                });
         }
+
         self.update();
     }
     </script>
