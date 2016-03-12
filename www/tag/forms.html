@@ -528,6 +528,9 @@
             comments: this.comments.value,
         };
         RiotControl.trigger('submit', self.data);
+        RiotControl.on('sucess', function(){
+            self.data = {};
+        })
         //RiotControl.trigger('get_forms', self.data);
         //RiotControl.on('forms', function(value) {
         //   self.forms = value;

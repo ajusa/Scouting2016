@@ -10,6 +10,7 @@ function leadForm() {
         qwest.post('http://' + settings.ip + ':628/lead', form)
             .then(function(xhr, response) {
                 window.alert("Form Submitted");
+                self.trigger('sucess')
             })
             .catch(function(e, xhr, response) {
                 window.alert("Error. Check if you are connected to the server");

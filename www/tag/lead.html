@@ -306,14 +306,17 @@
             };
             console.log(self.data)
             RiotControl.trigger('submit_lead', self.data);
-            //RiotControl.trigger('get_forms', self.data);
-            //RiotControl.on('forms', function(value) {
-            //   self.forms = value;
-            //})
-            //RiotControl.on('set_forms', function(value) {
-            //    console.log(value);
-            // })
-            //Lockr.set('forms', this.forms);
+            RiotControl.on('sucess', function() {
+                    self.data = {};
+                })
+                //RiotControl.trigger('get_forms', self.data);
+                //RiotControl.on('forms', function(value) {
+                //   self.forms = value;
+                //})
+                //RiotControl.on('set_forms', function(value) {
+                //    console.log(value);
+                // })
+                //Lockr.set('forms', this.forms);
         }
         //TODO
         //Match Number at top DONE
