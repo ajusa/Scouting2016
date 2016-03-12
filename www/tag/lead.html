@@ -307,7 +307,8 @@
             console.log(self.data)
             RiotControl.trigger('submit_lead', self.data);
             RiotControl.on('sucess', function() {
-                    self.data = {};
+                    window.location.reload()
+                    window.location = '#lead'
                 })
                 //RiotControl.trigger('get_forms', self.data);
                 //RiotControl.on('forms', function(value) {
