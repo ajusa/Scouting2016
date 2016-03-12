@@ -528,17 +528,18 @@
             comments: this.comments.value,
         };
         RiotControl.trigger('submit', self.data);
-        RiotControl.on('sucess', function(){
-            self.data = {};
-        })
-        //RiotControl.trigger('get_forms', self.data);
-        //RiotControl.on('forms', function(value) {
-        //   self.forms = value;
-        //})
-        //RiotControl.on('set_forms', function(value) {
-        //    console.log(value);
-        // })
-        //Lockr.set('forms', this.forms);
+        RiotControl.on('sucess', function() {
+                window.location.reload()
+                window.location = '#main'
+            })
+            //RiotControl.trigger('get_forms', self.data);
+            //RiotControl.on('forms', function(value) {
+            //   self.forms = value;
+            //})
+            //RiotControl.on('set_forms', function(value) {
+            //    console.log(value);
+            // })
+            //Lockr.set('forms', this.forms);
     }
     </script>
 </forms>
