@@ -25,6 +25,7 @@
     <!-- your app's js -->
     <script src="js/settingStore.js"></script>
     <script src="js/formStore.js"></script>
+    <script src="js/leadStore.js"></script>
     <!-- ui tags -->
     <script src="tag/forms.html" type="riot/tag"></script>
     <script src="tag/tabs.html" type="riot/tag"></script>
@@ -41,8 +42,10 @@
     }
     var manager = new Manager(); // Create a store instance.
     var formStore = new Form();
+    var leadStore = new leadForm();
     RiotControl.addStore(manager)
     RiotControl.addStore(formStore)
+    RiotControl.addStore(leadStore)
     riot.mount('*');
     RiotControl.trigger('get_setting');
     </script>

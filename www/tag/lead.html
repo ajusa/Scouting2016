@@ -1,52 +1,330 @@
 <lead>
     <h1>Lead Scout</h1>
-    <h2>Spy</h2>
-    <li class="item item-toggle">
-        Spy got Team #
-        <label class="toggle toggle-positive">
-            <input type="checkbox" name="spyNumber">
-            <div class="track">
-                <div class="handle"></div>
-            </div>
-        </label>
-    </li>
     <label class="item item-input">
-        <input type="text" name="team" placeholder="Team Number">
+        <input type="text" name="match" placeholder="Match Number">
+    </label>
+    <h2>Blue</h2>
+    <h3>Spy</h3>
+    <label class="item item-input">
+        <input type="text" name="bluespybotteam" placeholder=" Spy Bot Team #">
+    </label>
+    <label class="item item-input">
+        <input type="text" name="bluespyperteam" placeholder="Spyperson Team #">
     </label>
     <label class="item item-input item-select">
         <div class="input-label">
             Spy Communication
         </div>
-        <select onchange={this.update}>
-            <option selected name="hand">Hand Signals</option>
-            <option name="sign">Sign</option>
-            <option name="notes">Taking Notes</option>
-            <option name="other">Other</option>
+        <select name="bluespycomms">
+            <option selected value="none">None</option>
+            <option value="hand">Hand Signals</option>
+            <option value="sign">Sign</option>
+            <option value="notes">Taking Notes</option>
+            <option value="other">Other</option>
+        </select>
+    </label>
+    <h2>Obstacles</h2>
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Position 2
+        </div>
+        <select name="blueposition2">
+            <option value="Portcullis">Portcullis</option>
+            <option value="ChevaldeFrise">Cheval de Frise</option>
+            <option value="Moat">Moat</option>
+            <option value="Ramparts">Ramparts</option>
+            <option value="Drawbridge">Drawbridge</option>
+            <option value="SallyPort">Sally Port</option>
+            <option value="RockWall">Rock Wall</option>
+            <option value="RoughTerrain">Rough Terrain</option>
         </select>
     </label>
     <label class="item item-input item-select">
         <div class="input-label">
-            Barrier Location
+            Position 3
         </div>
-        <select name="location">
-            <option selected value="hand">1</option>
-            <option value="sign">2</option>
-            <option value="notes">3</option>
-            <option value="other">4</option>
+        <select name="blueposition3">
+            <option value="Portcullis">Portcullis</option>
+            <option value="ChevaldeFrise">Cheval de Frise</option>
+            <option value="Moat">Moat</option>
+            <option value="Ramparts">Ramparts</option>
+            <option value="Drawbridge">Drawbridge</option>
+            <option value="SallyPort">Sally Port</option>
+            <option value="RockWall">Rock Wall</option>
+            <option value="RoughTerrain">Rough Terrain</option>
         </select>
     </label>
     <label class="item item-input item-select">
         <div class="input-label">
-            Type of Barrier
+            Position 4
         </div>
-        <select onchange={this.update}>
-            <option selected name="hand">Hand Signals</option>
-            <option name="sign">Sign</option>
-            <option name="notes">Taking Notes</option>
-            <option name="other">Other</option>
+        <select name="blueposition4">
+            <option value="Portcullis">Portcullis</option>
+            <option value="ChevaldeFrise">Cheval de Frise</option>
+            <option value="Moat">Moat</option>
+            <option value="Ramparts">Ramparts</option>
+            <option value="Drawbridge">Drawbridge</option>
+            <option value="SallyPort">Sally Port</option>
+            <option value="RockWall">Rock Wall</option>
+            <option value="RoughTerrain">Rough Terrain</option>
         </select>
     </label>
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Position 5
+        </div>
+        <select name="blueposition5">
+            <option value="Portcullis">Portcullis</option>
+            <option value="ChevaldeFrise">Cheval de Frise</option>
+            <option value="Moat">Moat</option>
+            <option value="Ramparts">Ramparts</option>
+            <option value="Drawbridge">Drawbridge</option>
+            <option value="SallyPort">Sally Port</option>
+            <option value="RockWall">Rock Wall</option>
+            <option value="RoughTerrain">Rough Terrain</option>
+        </select>
+    </label>
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Audience
+        </div>
+        <select name="blueaudience">
+            <option value="Portcullis">Portcullis</option>
+            <option value="ChevaldeFrise">Cheval de Frise</option>
+            <option value="Moat">Moat</option>
+            <option value="Ramparts">Ramparts</option>
+            <option value="Drawbridge">Drawbridge</option>
+            <option value="SallyPort">Sally Port</option>
+            <option value="RockWall">Rock Wall</option>
+            <option value="RoughTerrain">Rough Terrain</option>
+        </select>
+    </label>
+    <h3>Problem Bots</h3>
+    <label class="item item-input">
+        <textarea placeholder="Problem Bots" name="blueproblems"></textarea>
+    </label>
+    <h2>Red</h2>
+    <h3>Spy</h3>
+    <label class="item item-input">
+        <input type="text" name="redspybotteam" placeholder=" Spy Bot Team #">
+    </label>
+    <label class="item item-input">
+        <input type="text" name="redspyperteam" placeholder="Spyperson Team #">
+    </label>
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Spy Communication
+        </div>
+        <select name="redspycomms">
+            <option selected value="none">None</option>
+            <option value="hand">Hand Signals</option>
+            <option value="sign">Sign</option>
+            <option value="notes">Taking Notes</option>
+            <option value="other">Other</option>
+        </select>
+    </label>
+    <h2>Obstacles</h2>
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Position 2
+        </div>
+        <select name="redposition2">
+            <option value="Portcullis">Portcullis</option>
+            <option value="ChevaldeFrise">Cheval de Frise</option>
+            <option value="Moat">Moat</option>
+            <option value="Ramparts">Ramparts</option>
+            <option value="Drawbridge">Drawbridge</option>
+            <option value="SallyPort">Sally Port</option>
+            <option value="RockWall">Rock Wall</option>
+            <option value="RoughTerrain">Rough Terrain</option>
+        </select>
+    </label>
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Position 3
+        </div>
+        <select name="redposition3">
+            <option value="Portcullis">Portcullis</option>
+            <option value="ChevaldeFrise">Cheval de Frise</option>
+            <option value="Moat">Moat</option>
+            <option value="Ramparts">Ramparts</option>
+            <option value="Drawbridge">Drawbridge</option>
+            <option value="SallyPort">Sally Port</option>
+            <option value="RockWall">Rock Wall</option>
+            <option value="RoughTerrain">Rough Terrain</option>
+        </select>
+    </label>
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Position 4
+        </div>
+        <select name="redposition4">
+            <option value="Portcullis">Portcullis</option>
+            <option value="ChevaldeFrise">Cheval de Frise</option>
+            <option value="Moat">Moat</option>
+            <option value="Ramparts">Ramparts</option>
+            <option value="Drawbridge">Drawbridge</option>
+            <option value="SallyPort">Sally Port</option>
+            <option value="RockWall">Rock Wall</option>
+            <option value="RoughTerrain">Rough Terrain</option>
+        </select>
+    </label>
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Position 5
+        </div>
+        <select name="redposition5">
+            <option value="Portcullis">Portcullis</option>
+            <option value="ChevaldeFrise">Cheval de Frise</option>
+            <option value="Moat">Moat</option>
+            <option value="Ramparts">Ramparts</option>
+            <option value="Drawbridge">Drawbridge</option>
+            <option value="SallyPort">Sally Port</option>
+            <option value="RockWall">Rock Wall</option>
+            <option value="RoughTerrain">Rough Terrain</option>
+        </select>
+    </label>
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Audience
+        </div>
+        <select name="redaudience">
+            <option value="Portcullis">Portcullis</option>
+            <option value="ChevaldeFrise">Cheval de Frise</option>
+            <option value="Moat">Moat</option>
+            <option value="Ramparts">Ramparts</option>
+            <option value="Drawbridge">Drawbridge</option>
+            <option value="SallyPort">Sally Port</option>
+            <option value="RockWall">Rock Wall</option>
+            <option value="RoughTerrain">Rough Terrain</option>
+        </select>
+    </label>
+    <h3>Problem Bots</h3>
+    <label class="item item-input">
+        <textarea placeholder="Problem Bots" name="redcomments"></textarea>
+    </label>
+    <h2>Castle Stuff</h2>
+    <li class="item item-toggle">
+        Red Castle Weakened
+        <label class="toggle toggle-positive">
+            <input type="checkbox" name="redcastle">
+            <div class="track">
+                <div class="handle"></div>
+            </div>
+        </label>
+    </li>
+    <div class="list">
+        <label class="item item-input">
+            <input type="text" name="redbots" placeholder="Robots that challenged (period seperated)">
+        </label>
+        <label class="item item-input">
+            <input type="text" name="redbotsclimb" placeholder="Robots that climbed (period seperated)">
+        </label>
+    </div>
+    <li class="item item-toggle">
+        Blue Castle Weakened
+        <label class="toggle toggle-positive">
+            <input type="checkbox" name="bluecastle">
+            <div class="track">
+                <div class="handle"></div>
+            </div>
+        </label>
+    </li>
+    <div class="list">
+        <label class="item item-input">
+            <input type="text" name="bluebots" placeholder="Robots that challenged (period seperated)">
+        </label>
+        <label class="item item-input">
+            <input type="text" name="bluebotsclimb" placeholder="Robots that climbed (period seperated)">
+        </label>
+    </div>
+    <h3>Additional Info</h3>
+    <label class="item item-input">
+        <textarea placeholder="Addition Info" name="additional"></textarea>
+    </label>
+    <button class="button button-block button-positive" onclick={submit}>
+        SUBMIT
+    </button>
     <script>
     var self = this;
+    self.data = {
+        match: this.match.value,
+        bluespybotteam: this.bluespybotteam.value,
+        bluespyperteam: this.bluespyperteam.value,
+        bluespycomms: this.bluespycomms.value,
+        blueobstacleposition2: this.blueposition2.value,
+        blueobstacleposition3: this.blueposition3.value,
+        blueobstacleposition4: this.blueposition4.value,
+        blueobstacleposition5: this.blueposition5.value,
+        blueaudience: this.blueaudience.value,
+        blueproblems: this.blueproblems.value,
+        redspybotteam: this.bluespybotteam.value,
+        redspyperteam: this.bluespyperteam.value,
+        redspycomms: this.bluespycomms.value,
+        redobstacleposition2: this.blueposition2.value,
+        redobstacleposition3: this.blueposition3.value,
+        redobstacleposition4: this.blueposition4.value,
+        redobstacleposition5: this.blueposition5.value,
+        redaudience: this.blueaudience.value,
+        redproblems: this.blueproblems.value,
+        bluecastleweak: this.bluecastle.checked,
+        bluebotschallenge: this.bluebots.value,
+        bluebotsclimb: this.bluebotsclimb.value,
+        redcastleweak: this.bluecastle.checked,
+        redbotschallenge: this.bluebots.value,
+        redbotsclimb: this.bluebotsclimb.value,
+        additional: this.additional.value,
+    };
+    submit(e) {
+            self.data = {
+                match: this.match.value,
+                bluespybotteam: this.bluespybotteam.value,
+                bluespyperteam: this.bluespyperteam.value,
+                bluespycomms: this.bluespycomms.value,
+                blueobstacleposition2: this.blueposition2.value,
+                blueobstacleposition3: this.blueposition3.value,
+                blueobstacleposition4: this.blueposition4.value,
+                blueobstacleposition5: this.blueposition5.value,
+                blueaudience: this.blueaudience.value,
+                blueproblems: this.blueproblems.value,
+                redspybotteam: this.bluespybotteam.value,
+                redspyperteam: this.bluespyperteam.value,
+                redspycomms: this.bluespycomms.value,
+                redobstacleposition2: this.blueposition2.value,
+                redobstacleposition3: this.blueposition3.value,
+                redobstacleposition4: this.blueposition4.value,
+                redobstacleposition5: this.blueposition5.value,
+                redaudience: this.blueaudience.value,
+                redproblems: this.blueproblems.value,
+                bluecastleweak: this.bluecastle.checked,
+                bluebotschallenge: this.bluebots.value,
+                bluebotsclimb: this.bluebotsclimb.value,
+                redcastleweak: this.bluecastle.checked,
+                redbotschallenge: this.bluebots.value,
+                redbotsclimb: this.bluebotsclimb.value,
+                additional: this.additional.value,
+            };
+            console.log(self.data)
+            RiotControl.trigger('submit_lead', self.data);
+            //RiotControl.trigger('get_forms', self.data);
+            //RiotControl.on('forms', function(value) {
+            //   self.forms = value;
+            //})
+            //RiotControl.on('set_forms', function(value) {
+            //    console.log(value);
+            // })
+            //Lockr.set('forms', this.forms);
+        }
+        //TODO
+        //Match Number at top DONE
+        //Barrier is for each position, 2-5, and select each one
+        //Need to know which one is from audience
+        //Problem Bots - Team #
+        //Additional Info Box
+        //Challenging Castle (Trying to climb)
+        //Which bot challeneged the castle, bot number, fail/success. Attempt counts! DONE
+        //Toggle for red or blue weakened DONE
+        //
+        //No Comments for above!
     </script>
 </lead>

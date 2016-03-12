@@ -54,10 +54,10 @@
                     name: self.name.value,
                 })
                 .then(function(xhr, response) {
-                    console.log("pass sent")
+                    alert("Connected to the Server")
                 })
                 .catch(function(e, xhr, response) {
-                    console.log("pass unsent")
+                    alert("Not Connected to the Server")
                 });
         }
 
