@@ -1,5 +1,6 @@
 <forms>
     <h1>Team</h1>
+    <form name="clear">
     <div class="list">
         <label class="item item-input">
             <input type="text" name="match" placeholder="Match Number">
@@ -391,12 +392,14 @@
         <label class="item item-input">
             <textarea placeholder="Comments" name="comments"></textarea>
         </label>
+        </form>
         <button class="button button-block button-positive" onclick={submit}>
             SUBMIT
         </button>
     </form>
     <script>
     var self = this;
+
     self.data = {
         match: this.match.value,
         team: this.team.value,
@@ -529,8 +532,7 @@
         };
         RiotControl.trigger('submit', self.data);
         RiotControl.on('sucess', function() {
-                window.location.reload()
-                window.location = '#main'
+                self.clear.reset()
             })
             //RiotControl.trigger('get_forms', self.data);
             //RiotControl.on('forms', function(value) {
